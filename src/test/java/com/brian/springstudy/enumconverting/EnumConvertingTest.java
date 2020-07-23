@@ -32,7 +32,7 @@ public class EnumConvertingTest {
     private ObjectMapper objectMapper;
 
     /**
-     * 파라미터에 @RequestParam 정의된 메서 테스트
+     * 파라미터에 @RequestParam 정의된 메서드 테스트
      *
      * RequestParamMethodArgumentResolver 동작
      *  GenericConversionService 내에서 파라미터 타입에 맞는 converter 가 컨버팅
@@ -48,7 +48,7 @@ public class EnumConvertingTest {
     }
 
     /**
-     * 파라미터에 @RequestBody 정의된 메서 테스트
+     * 파라미터에 @RequestBody 정의된 메서드 테스트
      *
      * RequestResponseBodyMethodProcessor 동작
      *  HttpMessageConverter 를 상속한 converter 중에 파라미터 타입에 맞는 converter 가 컨버팅
