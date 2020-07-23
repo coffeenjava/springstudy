@@ -29,7 +29,7 @@ Entity 에 정의된 Enum 필드에 @Type 을 선언하여 CustomEnumType 을 �
 YesNo 처럼 여러 Entity 에서 자주 사용될 가능성이 있는 Enum 은 자동 컨버팅 될 수 있도록 javax.persistence.AttributeConverter 를 상속하여 컨버터를(YesNoConverter) 구현하는게 편리할 수 있습니다.
 
 ### 추가 정보
-- @RequestParam 이 선언된 parameter 의 경우 jackson converter 가 동작하지 않고 컨테이너에 내장된 converter(ConverterFactory 구현 클래스)가 동작하므로, 우리가 정의한 Enum 에 대한 ConverterFactory 를 따로 구현하여 FormatterRegistry 에 등록해야 합니다.   
+- @RequestParam 이 선언된 parameter 의 경우 jackson converter 가 동작하지 않고 컨테이너에 내장된 converter(Converter 혹은 ConverterFactory 구현 클래스)가 동작하므로, 우리가 정의한 Enum 에 대한 ConverterFactory 를 따로 구현하여 FormatterRegistry 에 등록해야 합니다.   
 (StringToEnumConverterFactory/WebMvcConfig 소스 참고)
 - Controller 의 return value 는 항상 jackson converter 가 동작합니다. 이유는 UserController 의 @RestController 설정으로 인해 모든 메서드에 @ResponseBody 가 적용되어 있기 때문입니다.
 - 스프링 DispatcherServlet 프로세스
